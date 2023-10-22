@@ -1,5 +1,5 @@
 #!/usr/bin/env/ groovy
 
 def Init() {
-    echo "begin ..."
+    echo "Building the application for branch $BRANCH_NAME..."
 }
