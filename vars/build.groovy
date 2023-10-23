@@ -1,6 +1,6 @@
 #!/usr/bin/env/ groovy
 
-def BuildImage(String dockerImageName, String nexusImageName ) {
+def call(String dockerImageName, String nexusImageName ) {
     withCredentials([
             usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USER_DOCKER', passwordVariable: 'PASSWORD_DOCKER'),
             usernamePassword(credentialsId: 'Nexus', usernameVariable: 'USER_NEXUS', passwordVariable: 'PASSWORD_NEXUS')
