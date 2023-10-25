@@ -9,7 +9,7 @@ def call( String nexusImageName ) {
         echo "building the Nexus Image ..."
         sh "docker-buildx buildDocker -t $nexusImageName ."
         echo "Login to Nexus ..."
-        sh "echo $PASSWORD_NEXUS | docker login -u $USER_NEXUS --password-stdin localhost:8082"
+        sh "echo $PASSWORD_NEXUS | docker login -u $USER_NEXUS --password-stdin $HOST_NEXUS"
         echo "Push image to Nexus ..."
         sh "docker push $nexusImageName"
     }
