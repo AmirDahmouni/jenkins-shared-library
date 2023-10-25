@@ -7,7 +7,7 @@ def call( String nexusImageName ) {
         echo "Environement: ${ENV}"
         echo "deploying application version ${params.VERSION}... "
         echo "building the Nexus Image ..."
-        sh "docker-buildx build -t $nexusImageName ."
+        sh 'docker-buildx build -t $nexusImageName .'
         echo "Login to Nexus ..."
         sh "echo $PASSWORD_NEXUS | docker login -u $USER_NEXUS --password-stdin $HOST_NEXUS"
         echo "Push image to Nexus ..."
