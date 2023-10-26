@@ -7,7 +7,7 @@ def call( String dockerImageName ) {
         echo "Environement: ${ENV}"
         echo "deploying application version ${params.VERSION}... "
         echo "building the Docker image ..."
-        String build = "from groovy --------> docker-buildx build -t $dockerImageName .";
+        String build = "from groovy --------> docker-buildx build -t $dockerImageName ."
         println(build)
         println "docker-buildx build -t $dockerImageName ."
         echo "docker-buildx build -t $dockerImageName ."
