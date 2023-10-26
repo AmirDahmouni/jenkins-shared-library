@@ -11,7 +11,7 @@ def call( String dockerImageName ) {
         echo "Login to dockerHub ..."
         sh "echo $PASSWORD_DOCKER | docker login -u $USER_DOCKER --password-stdin"
         echo "Push image to Dockerhub ..."
-        sh "docker push $dockerImageName"
+        sh "docker push $dockerImageName ."
     }
 
 }
