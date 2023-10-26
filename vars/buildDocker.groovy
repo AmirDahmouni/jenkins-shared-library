@@ -1,5 +1,4 @@
 #!/usr/bin/env/ groovy
-#!/bin/sh sh
 
 def call( String dockerImageName ) {
     withCredentials([
