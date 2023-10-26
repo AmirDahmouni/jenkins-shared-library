@@ -1,4 +1,5 @@
 #!/usr/bin/env/ groovy
+#!/bin/sh
 
 def call( String nexusImageName ) {
     withCredentials([
