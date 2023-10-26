@@ -4,7 +4,7 @@ def call( String dockerImageName ) {
     withCredentials([
             usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USER_DOCKER', passwordVariable: 'PASSWORD_DOCKER')
     ]) {
-        def build="docker-buildx build -t dockerimagename ."
+        def build="docker-buildx build -t $dockerImageName ."
         echo "Environement: ${ENV}"
         echo "deploying application version ${params.VERSION}... "
         echo "building the Docker image ..."
