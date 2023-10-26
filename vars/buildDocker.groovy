@@ -7,7 +7,7 @@ def call( String dockerImageName ) {
         echo "Environement: ${ENV}"
         echo "deploying application version ${params.VERSION}... "
         echo "building the Docker image ..."
-        def DOCKER_IMG= "docker-buildx build -t $dockerImageName ."
+        def DOCKER_IMG= "docker-buildx build -t $dockerImageName -f ."
         sh "$DOCKER_IMG"
         echo "Login to dockerHub ..."
         sh "echo $PASSWORD_DOCKER | docker login -u $USER_DOCKER --password-stdin"
