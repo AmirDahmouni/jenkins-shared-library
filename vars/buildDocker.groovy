@@ -11,7 +11,7 @@ def call( String dockerImageName ) {
         println(build)
         println "docker-buildx build -t $dockerImageName ."
         echo "docker-buildx build -t $dockerImageName ."
-        sh "docker-buildx build -t $dockerImageName ."
+        sh "docker-buildx build -t $dockerImageName .."
         echo "Login to dockerHub ..."
         sh "echo $PASSWORD_DOCKER | docker login -u $USER_DOCKER --password-stdin"
         echo "Push image to Dockerhub ..."
