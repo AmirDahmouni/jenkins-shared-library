@@ -5,10 +5,9 @@ def call( String dockerImageName ) {
             usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USER_DOCKER', passwordVariable: 'PASSWORD_DOCKER')
     ]) {
         echo "Environement: ${ENV}"
-        sh "export DOCKER_BUILDKIT=1"
         echo "deploying application version ${params.VERSION}... "
         echo "building the Docker image ..."
-        sh "docker buildx build -t ${dockerImageName} ."
+        sh "docker buildx build --build-arg BUILDKIT_INLINE_CACHE=1 --tag ${dockerImageName} ."
         echo "Login to dockerHub ..."
         sh "echo $PASSWORD_DOCKER | docker login -u $USER_DOCKER --password-stdin"
         echo "Push image to Dockerhub ..."
