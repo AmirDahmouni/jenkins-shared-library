@@ -9,7 +9,7 @@ def call( String dockerImageName ) {
         echo "building the Docker image ..."
         sh 'Build="docker-buildx build -t ${dockerImageName}" ./'
         sh 'echo $Build'
-        sh "Build"
+        sh "$Build"
         echo "Login to dockerHub ..."
         sh "echo $PASSWORD_DOCKER | docker login -u $USER_DOCKER --password-stdin"
         echo "Push image to Dockerhub ..."
